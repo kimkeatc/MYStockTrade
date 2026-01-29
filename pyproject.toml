@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "MYStockTrade"
+version = "1.0.0"
+description = "Malaysia Stock Trading"
+readme = "README.md"
+requires-python = ">=3.14"
+
+authors = [
+    { name="Chin Kim Keat", email="kim.keat.chin@outlook.com" }
+]
+
+maintainers = [
+    { name="Chin Kim Keat", email="kim.keat.chin@outlook.com" }
+]
+
+classifiers = [
+  "Development Status :: 1 - Planning",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: Software Development"
+]
+
+dependencies = [
+    "bs4",
+    "build",
+    "flake8",
+    "jinja2",
+    "lxml",
+    "openpyxl",
+    "pandas==2.3.3",
+    "pytest",
+    "requests",
+    "setuptools",
+    "twine"
+]
+
+[project.urls]
+Repository = "https://github.com/kimkeatc/MYStockTrade"
+
+# ------------------------------
+# MONOREPO PACKAGE MAPPING
+# ------------------------------
+
+[tool.setuptools.packages.find]
+where = ["libs"]
+include = ["klsescreener", "mplus", "shared"]
+
+[tool.setuptools.package-dir]
+klsescreener = "libs/klsescreener/src"
+shared = "libs/shared/src"
